@@ -1,0 +1,17 @@
+---
+BasedOnStyle: LLVM
+PointerBindsToType: false
+ObjCSpaceAfterProperty: true
+ColumnLimit: 120
+IndentWidth: 8
+UseTab: Always
+SpacesInContainerLiterals: true
+SpacesInAngles: false
+SpacesBeforeTrailingComments: 0
+SpaceBeforeAssignmentOperators: true
+PointerAlignment: Right
+ObjCSpaceBeforeProtocolList: true
+ObjCSpaceAfterProperty: true
+ObjCBlockIndentWidth: 8
+MaxEmptyLinesToKeep: 1
+AllowShortFunctionsOnASingleLine: None
