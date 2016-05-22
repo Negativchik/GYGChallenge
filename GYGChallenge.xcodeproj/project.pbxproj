@@ -55,6 +55,7 @@
 		95747A651CF1B3940066F5BE /* WriteReviewTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WriteReviewTableViewController.m; path = ViewControllers/WriteReviewTableViewController.m; sourceTree = "<group>"; };
 		957AE6A21CF1C5C1002A295E /* CurrentUserReviewResponse */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = CurrentUserReviewResponse; sourceTree = "<group>"; };
 		957AE6A41CF1C634002A295E /* CurrentUserReviewResponseNoReview */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = CurrentUserReviewResponseNoReview; sourceTree = "<group>"; };
+		957AE6A61CF1DA50002A295E /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		95A33E301CF05929007307F5 /* GYGChallenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GYGChallenge.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		95A33E341CF05929007307F5 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		95A33E361CF05929007307F5 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -153,6 +154,7 @@
 		95A33E271CF05929007307F5 = {
 			isa = PBXGroup;
 			children = (
+				957AE6A61CF1DA50002A295E /* README.md */,
 				95A33E671CF062DE007307F5 /* .clang-format */,
 				95A33E321CF05929007307F5 /* GYGChallenge */,
 				95A33E4C1CF05929007307F5 /* GYGChallengeTests */,
