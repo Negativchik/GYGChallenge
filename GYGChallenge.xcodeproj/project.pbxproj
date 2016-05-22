@@ -12,6 +12,8 @@
 		957469F71CF131DD00B5015C /* ReviewTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 957469F61CF131DD00B5015C /* ReviewTableViewController.m */; };
 		957469FE1CF1444300B5015C /* LoadMoreTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 957469FD1CF1444300B5015C /* LoadMoreTableViewCell.m */; };
 		95747A661CF1B3940066F5BE /* WriteReviewTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 95747A651CF1B3940066F5BE /* WriteReviewTableViewController.m */; };
+		957AE6A31CF1C5C1002A295E /* CurrentUserReviewResponse in Resources */ = {isa = PBXBuildFile; fileRef = 957AE6A21CF1C5C1002A295E /* CurrentUserReviewResponse */; };
+		957AE6A51CF1C634002A295E /* CurrentUserReviewResponseNoReview in Resources */ = {isa = PBXBuildFile; fileRef = 957AE6A41CF1C634002A295E /* CurrentUserReviewResponseNoReview */; };
 		95A33E351CF05929007307F5 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 95A33E341CF05929007307F5 /* main.m */; };
 		95A33E381CF05929007307F5 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 95A33E371CF05929007307F5 /* AppDelegate.m */; };
 		95A33E3E1CF05929007307F5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 95A33E3C1CF05929007307F5 /* Main.storyboard */; };
@@ -20,7 +22,7 @@
 		95A33E5B1CF0594F007307F5 /* Review.m in Sources */ = {isa = PBXBuildFile; fileRef = 95A33E5A1CF0594F007307F5 /* Review.m */; };
 		95A33E631CF061FE007307F5 /* ReviewParserTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 95A33E621CF061FE007307F5 /* ReviewParserTests.m */; };
 		95A33E661CF06244007307F5 /* ReviewParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 95A33E651CF06244007307F5 /* ReviewParser.m */; };
-		95A33E691CF0638B007307F5 /* Response in Resources */ = {isa = PBXBuildFile; fileRef = 95A33E681CF0638B007307F5 /* Response */; };
+		95A33E691CF0638B007307F5 /* ReviewsResponse in Resources */ = {isa = PBXBuildFile; fileRef = 95A33E681CF0638B007307F5 /* ReviewsResponse */; };
 		95A33E6C1CF09F78007307F5 /* ReviewsLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = 95A33E6B1CF09F78007307F5 /* ReviewsLoader.m */; };
 		95A33E6E1CF0A234007307F5 /* ReviewsLoaderTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 95A33E6D1CF0A234007307F5 /* ReviewsLoaderTests.m */; };
 		9F191EFF57650EEAAA2265C1 /* Pods_GYGChallengeTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E6ADFF7E1648A3DC7F1E7B2 /* Pods_GYGChallengeTests.framework */; };
@@ -51,6 +53,8 @@
 		957469FD1CF1444300B5015C /* LoadMoreTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LoadMoreTableViewCell.m; path = Views/LoadMoreTableViewCell.m; sourceTree = "<group>"; };
 		95747A641CF1B3940066F5BE /* WriteReviewTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WriteReviewTableViewController.h; path = ViewControllers/WriteReviewTableViewController.h; sourceTree = "<group>"; };
 		95747A651CF1B3940066F5BE /* WriteReviewTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WriteReviewTableViewController.m; path = ViewControllers/WriteReviewTableViewController.m; sourceTree = "<group>"; };
+		957AE6A21CF1C5C1002A295E /* CurrentUserReviewResponse */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = CurrentUserReviewResponse; sourceTree = "<group>"; };
+		957AE6A41CF1C634002A295E /* CurrentUserReviewResponseNoReview */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = CurrentUserReviewResponseNoReview; sourceTree = "<group>"; };
 		95A33E301CF05929007307F5 /* GYGChallenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GYGChallenge.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		95A33E341CF05929007307F5 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		95A33E361CF05929007307F5 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -67,7 +71,7 @@
 		95A33E641CF06244007307F5 /* ReviewParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ReviewParser.h; path = Model/ReviewParser.h; sourceTree = "<group>"; };
 		95A33E651CF06244007307F5 /* ReviewParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ReviewParser.m; path = Model/ReviewParser.m; sourceTree = "<group>"; };
 		95A33E671CF062DE007307F5 /* .clang-format */ = {isa = PBXFileReference; lastKnownFileType = text; path = ".clang-format"; sourceTree = "<group>"; };
-		95A33E681CF0638B007307F5 /* Response */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Response; sourceTree = "<group>"; };
+		95A33E681CF0638B007307F5 /* ReviewsResponse */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ReviewsResponse; sourceTree = "<group>"; };
 		95A33E6A1CF09F78007307F5 /* ReviewsLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ReviewsLoader.h; path = Model/ReviewsLoader.h; sourceTree = "<group>"; };
 		95A33E6B1CF09F78007307F5 /* ReviewsLoader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ReviewsLoader.m; path = Model/ReviewsLoader.m; sourceTree = "<group>"; };
 		95A33E6D1CF0A234007307F5 /* ReviewsLoaderTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReviewsLoaderTests.m; sourceTree = "<group>"; };
@@ -198,7 +202,9 @@
 				95454D631CF11A66002C8BFD /* ReviewTests.m */,
 				95A33E6D1CF0A234007307F5 /* ReviewsLoaderTests.m */,
 				95A33E621CF061FE007307F5 /* ReviewParserTests.m */,
-				95A33E681CF0638B007307F5 /* Response */,
+				957AE6A41CF1C634002A295E /* CurrentUserReviewResponseNoReview */,
+				957AE6A21CF1C5C1002A295E /* CurrentUserReviewResponse */,
+				95A33E681CF0638B007307F5 /* ReviewsResponse */,
 			);
 			path = GYGChallengeTests;
 			sourceTree = "<group>";
@@ -312,7 +318,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				95A33E691CF0638B007307F5 /* Response in Resources */,
+				957AE6A51CF1C634002A295E /* CurrentUserReviewResponseNoReview in Resources */,
+				957AE6A31CF1C5C1002A295E /* CurrentUserReviewResponse in Resources */,
+				95A33E691CF0638B007307F5 /* ReviewsResponse in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

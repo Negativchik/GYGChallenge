@@ -30,7 +30,7 @@
 - (void)testParseResponseWithCorrectData {
 	// given
 	NSString *path = [[NSBundle bundleForClass:[self class]] resourcePath];
-	NSData *data = [[NSData alloc] initWithContentsOfFile:[path stringByAppendingPathComponent:@"Response"]];
+	NSData *data = [[NSData alloc] initWithContentsOfFile:[path stringByAppendingPathComponent:@"ReviewsResponse"]];
 	XCTestExpectation *expectation = [self expectationWithDescription:@"Parsing is finished"];
 	NSUInteger correctArrayLength = 5;
 	NSUInteger correctTotalCount = 201;
@@ -69,8 +69,8 @@
 	[parser parseWithCompletion:^(NSArray<Review *> *reviews, NSUInteger totalReviews) {
 		[expectation fulfill];
 	}
-	    failure:^(NSError *returnedError) {
-		    error = returnedError;
+	    failure:^(NSError *_error) {
+		    error = _error;
 		    [expectation fulfill];
 	    }];
 

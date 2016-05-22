@@ -7,6 +7,7 @@
 //
 
 #import "HCSStarRatingView.h"
+#import "Review.h"
 #import "WriteReviewTableViewController.h"
 #import <UITextView_Placeholder/UITextView+Placeholder.h>
 
@@ -19,6 +20,30 @@
 - (void)viewDidLoad {
 	[super viewDidLoad];
 	self.messageTextView.placeholder = @"Review";
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+	[super viewWillAppear:animated];
+
+	if (self.review == nil) {
+		self.review = [[Review alloc] init];
+	} else {
+		self.starsView.value = self.review.rating;
+		self.titleTextField.text = self.review.title;
+		self.messageTextView.text = self.review.message;
+	}
+}
+
+- (void)viewDidAppear:(BOOL)animated {
+	[super viewDidAppear:animated];
+
+    if (self.review == nil) {
+        UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"Wait a second please" message:nil preferredStyle:UIAlertControllerStyleAlert];
+        [alertController.view addSubview:[[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray]];
+        [self presentViewController:alertController animated:YES completion:nil];
+        
+        
+    }
 }
 
 #pragma mark <UITableViewDataSource>
@@ -35,18 +60,6 @@
 	return nil;
 }
 
-#pragma mark <UITableViewDelegate>
-
-//- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-//	switch (indexPath.row) {
-//	case 2:
-//		return tableView.frame.size.height / 2;
-//	default:
-//		return 44;
-//	}
-//	return 0;
-//}
-
 #pragma mark Actions
 
 - (IBAction)cancel:(id)sender {
@@ -55,9 +68,6 @@
 
 - (IBAction)done:(id)sender {
 	[self dismissViewControllerAnimated:true completion:nil];
-}
-
-- (IBAction)changeRating:(HCSStarRatingView *)sender {
 }
 
 @end

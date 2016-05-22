@@ -29,6 +29,14 @@ typedef enum : NSUInteger {
     sortDirection:(SortDirection)sortDirection
 	sortField:(SortField)sortField
        completion:(void (^)(NSArray<Review *> *reviews, NSUInteger totalReviews))completion
-	  failure:(void (^)(NSError *returnedError))failure;
+	  failure:(void (^)(NSError *error))failure;
+- (void)loadCurrentUserReviewWithCompletion:(void (^)(Review *review))completion
+				    failure:(void (^)(NSError *error))failure;
+- (void)createReview:(NSString *)path
+	      rating:(float)rating
+	       title:(NSString *)title
+	     message:(NSString *)message
+	  completion:(void (^)(NSArray<Review *> *reviews, NSUInteger totalReviews))completion
+	     failure:(void (^)(NSError *error))failure;
 
 @end

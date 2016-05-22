@@ -188,9 +188,6 @@
                                                         <userDefinedRuntimeAttribute type="boolean" keyPath="accurateHalfStars" value="NO"/>
                                                         <userDefinedRuntimeAttribute type="boolean" keyPath="continuous" value="NO"/>
                                                     </userDefinedRuntimeAttributes>
-                                                    <connections>
-                                                        <action selector="changeRating:" destination="XLw-fE-0vq" eventType="valueChanged" id="nsd-k7-AjT"/>
-                                                    </connections>
                                                 </view>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hnp-hD-GT6" userLabel="Hairline">
                                                     <rect key="frame" x="16" y="43" width="584" height="0.5"/>

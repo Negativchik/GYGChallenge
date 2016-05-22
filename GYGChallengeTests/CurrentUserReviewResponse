@@ -1,0 +1,12 @@
+{
+"review_id": 123280,
+"rating": "2.0",
+"title": "Title string",
+"message": "The best!",
+"author":"Bernhard \u2013 Lilienthal, Germany",
+"foreignLanguage": false,
+"date": "November 26, 2012",
+"date_unformatted": {},
+"languageCode": "en",
+"traveler_type": null
+}

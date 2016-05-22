@@ -21,10 +21,13 @@
 - (void)testsLoadReviews {
 	// given
 	[OHHTTPStubs stubRequestsPassingTest:^BOOL(NSURLRequest *_Nonnull request) {
-        return YES;
+		return [request.URL.host isEqualToString:@"www.getyourguide.com"] &&
+		       [request.URL.path isEqualToString:@"/berlin-l17/"
+							 @"tempelhof-2-hour-airport-history-tour-berlin-airlift-more-"
+							 @"t23776/reviews.json"];
 	}
 	    withStubResponse:^OHHTTPStubsResponse *_Nonnull(NSURLRequest *_Nonnull request) {
-		    NSString *path = OHPathForFileInBundle(@"Response", [NSBundle bundleForClass:[self class]]);
+		    NSString *path = OHPathForFileInBundle(@"ReviewsResponse", [NSBundle bundleForClass:[self class]]);
 		    return [OHHTTPStubsResponse responseWithFileAtPath:path
 							    statusCode:200
 							       headers:@{
@@ -46,11 +49,11 @@
 	    sortDirection:SortDirectionDescending
 	    sortField:SortFieldDateOfReview
 	    completion:^(NSArray<Review *> *_reviews, NSUInteger _totalReviews) {
-            reviews = _reviews;
-            totalReviews = _totalReviews;
+		    reviews = _reviews;
+		    totalReviews = _totalReviews;
 		    [expectation fulfill];
 	    }
-	    failure:^(NSError *returnedError) {
+	    failure:^(NSError *error) {
 		    [expectation fulfill];
 	    }];
 
@@ -62,6 +65,93 @@
 						     XCTAssertEqual(correctTotal, totalReviews);
 					     }
 
+				     }];
+}
+
+- (void)testsLoadCurrentUserReviewButThereIsNoReview {
+	// given
+	[OHHTTPStubs stubRequestsPassingTest:^BOOL(NSURLRequest *_Nonnull request) {
+		return [request.URL.host isEqualToString:@"www.getyourguide.com"] &&
+		       [request.URL.path isEqualToString:@"/berlin-l17/"
+							 @"tempelhof-2-hour-airport-history-tour-berlin-airlift-more-"
+							 @"t23776/review.json"];
+	}
+	    withStubResponse:^OHHTTPStubsResponse *_Nonnull(NSURLRequest *_Nonnull request) {
+		    NSString *path = OHPathForFileInBundle(@"CurrentUserReviewResponseNoReview",
+							   [NSBundle bundleForClass:[self class]]);
+		    return [OHHTTPStubsResponse responseWithFileAtPath:path
+							    statusCode:204
+							       headers:@{
+								       @"Content-Type" : @"text/json"
+							       }];
+	    }];
+	XCTestExpectation *expectation = [self expectationWithDescription:@"Review is loaded"];
+
+	// when
+	Review __block *review;
+	NSError __block *error = nil;
+
+	ReviewsLoader *loader = [[ReviewsLoader alloc] init];
+	[loader loadCurrentUserReviewWithCompletion:^(Review *_review) {
+        review = _review;
+        [expectation fulfill];
+	}
+	    failure:^(NSError *_error) {
+		    error = _error;
+		    [expectation fulfill];
+	    }];
+
+	// then
+	[self waitForExpectationsWithTimeout:5.0
+				     handler:^(NSError *_Nullable _error) {
+					     XCTAssertNil(error);
+					     XCTAssertNil(review);
+				     }];
+}
+
+- (void)testsLoadCurrentUserReview {
+	// given
+	[OHHTTPStubs stubRequestsPassingTest:^BOOL(NSURLRequest *_Nonnull request) {
+		return [request.URL.host isEqualToString:@"www.getyourguide.com"] &&
+		       [request.URL.path isEqualToString:@"/berlin-l17/tempelhof-2-hour-airport-history-tour-berlin-airlift-more-t23776/review.json"];
+	}
+	    withStubResponse:^OHHTTPStubsResponse *_Nonnull(NSURLRequest *_Nonnull request) {
+		    NSString *path =
+			OHPathForFileInBundle(@"CurrentUserReviewResponse", [NSBundle bundleForClass:[self class]]);
+		    return [OHHTTPStubsResponse responseWithFileAtPath:path
+							    statusCode:200
+							       headers:@{
+								       @"Content-Type" : @"text/json"
+							       }];
+	    }];
+	XCTestExpectation *expectation = [self expectationWithDescription:@"Review is loaded"];
+	Review *correctReview = [[Review alloc] init];
+	correctReview.reviewID = 123280;
+	correctReview.rating = 2.0;
+	correctReview.title = @"Title string";
+	correctReview.message = @"The best!";
+	correctReview.author = @"Bernhard \u2013 Lilienthal, Germany";
+	correctReview.foregroundLanguage = YES;
+
+	// when
+	Review __block *review;
+	NSError __block *error;
+
+	ReviewsLoader *loader = [[ReviewsLoader alloc] init];
+	[loader loadCurrentUserReviewWithCompletion:^(Review *_review) {
+		review = _review;
+        [expectation fulfill];
+	}
+	    failure:^(NSError *_error) {
+		    error = _error;
+		    [expectation fulfill];
+	    }];
+
+	// then
+	[self waitForExpectationsWithTimeout:5.0
+				     handler:^(NSError *_Nullable _error) {
+					     XCTAssertNil(error);
+					     XCTAssertTrue([correctReview isEqual:review]);
 				     }];
 }
 
