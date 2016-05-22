@@ -37,13 +37,15 @@
 - (void)viewDidAppear:(BOOL)animated {
 	[super viewDidAppear:animated];
 
-    if (self.review == nil) {
-        UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"Wait a second please" message:nil preferredStyle:UIAlertControllerStyleAlert];
-        [alertController.view addSubview:[[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray]];
-        [self presentViewController:alertController animated:YES completion:nil];
-        
-        
-    }
+	if (self.review == nil) {
+		UIAlertController *alertController =
+		    [UIAlertController alertControllerWithTitle:@"Wait a second please"
+							message:nil
+						 preferredStyle:UIAlertControllerStyleAlert];
+		[alertController.view addSubview:[[UIActivityIndicatorView alloc]
+						     initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray]];
+		[self presentViewController:alertController animated:YES completion:nil];
+	}
 }
 
 #pragma mark <UITableViewDataSource>

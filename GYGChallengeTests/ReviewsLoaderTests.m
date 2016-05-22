@@ -93,8 +93,8 @@
 
 	ReviewsLoader *loader = [[ReviewsLoader alloc] init];
 	[loader loadCurrentUserReviewWithCompletion:^(Review *_review) {
-        review = _review;
-        [expectation fulfill];
+		review = _review;
+		[expectation fulfill];
 	}
 	    failure:^(NSError *_error) {
 		    error = _error;
@@ -113,7 +113,9 @@
 	// given
 	[OHHTTPStubs stubRequestsPassingTest:^BOOL(NSURLRequest *_Nonnull request) {
 		return [request.URL.host isEqualToString:@"www.getyourguide.com"] &&
-		       [request.URL.path isEqualToString:@"/berlin-l17/tempelhof-2-hour-airport-history-tour-berlin-airlift-more-t23776/review.json"];
+		       [request.URL.path isEqualToString:@"/berlin-l17/"
+							 @"tempelhof-2-hour-airport-history-tour-berlin-airlift-more-"
+							 @"t23776/review.json"];
 	}
 	    withStubResponse:^OHHTTPStubsResponse *_Nonnull(NSURLRequest *_Nonnull request) {
 		    NSString *path =
@@ -140,7 +142,7 @@
 	ReviewsLoader *loader = [[ReviewsLoader alloc] init];
 	[loader loadCurrentUserReviewWithCompletion:^(Review *_review) {
 		review = _review;
-        [expectation fulfill];
+		[expectation fulfill];
 	}
 	    failure:^(NSError *_error) {
 		    error = _error;

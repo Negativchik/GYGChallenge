@@ -18,5 +18,4 @@
 @property (weak, nonatomic) IBOutlet UITextField *titleTextField;
 @property (weak, nonatomic) IBOutlet UITextView *messageTextView;
 
-
 @end

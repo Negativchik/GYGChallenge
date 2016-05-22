@@ -111,7 +111,7 @@
 	    failure:^(NSError *error) {
 		    [self.refreshControl endRefreshing];
 		    self.loading = NO;
-            [self handleError: error];
+		    [self handleError:error];
 	    }];
 }
 
@@ -131,19 +131,26 @@
 	    }
 	    failure:^(NSError *error) {
 		    [self.refreshControl endRefreshing];
-            self.loading = NO;
-            [self handleError: error];
+		    self.loading = NO;
+		    [self handleError:error];
 	    }];
 }
 
-- (void)handleError: (NSError *)error {
-    if (error.localizedDescription) {
-        UIAlertController *alertController = [UIAlertController alertControllerWithTitle:error.localizedDescription message:nil preferredStyle:UIAlertControllerStyleAlert];
-        [alertController addAction:[UIAlertAction actionWithTitle:@"Ok" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
-            [alertController dismissViewControllerAnimated:YES completion:nil];
-        }]];
-        [self presentViewController:alertController animated:YES completion:nil];
-    }
+- (void)handleError:(NSError *)error {
+	if (error.localizedDescription) {
+		UIAlertController *alertController =
+		    [UIAlertController alertControllerWithTitle:error.localizedDescription
+							message:nil
+						 preferredStyle:UIAlertControllerStyleAlert];
+		[alertController addAction:[UIAlertAction actionWithTitle:@"Ok"
+								    style:UIAlertActionStyleCancel
+								  handler:^(UIAlertAction *_Nonnull action) {
+									  [alertController
+									      dismissViewControllerAnimated:YES
+												 completion:nil];
+								  }]];
+		[self presentViewController:alertController animated:YES completion:nil];
+	}
 }
 
 @end

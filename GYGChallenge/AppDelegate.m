@@ -15,13 +15,8 @@
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-	[self configureAppearence];
 
 	return YES;
-}
-
-- (void)configureAppearence {
-    
 }
 
 @end

@@ -99,10 +99,10 @@ NSString *const kDataFieldName = @"data";
 	review.dateUnformatted = dictionary[kDateUnformattedFieldName];
 	review.languageCode = dictionary[kLanguageCodeFieldName];
 	review.travelerType = dictionary[kTravelerTypeFieldName];
-    
-    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-    dateFormatter.dateFormat = @"MMMM d, yyyy";
-    review.date = [dateFormatter dateFromString:dictionary[kDateFieldName]];
+
+	NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+	dateFormatter.dateFormat = @"MMMM d, yyyy";
+	review.date = [dateFormatter dateFromString:dictionary[kDateFieldName]];
 	return review;
 }
 

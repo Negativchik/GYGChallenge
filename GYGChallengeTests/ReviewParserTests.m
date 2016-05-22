@@ -107,12 +107,12 @@
 	correctReview.author = @"Bernhard \u2013 Lilienthal, Germany";
 	correctReview.foregroundLanguage = YES;
 
-    NSCalendar *calendar = [NSCalendar currentCalendar];
+	NSCalendar *calendar = [NSCalendar currentCalendar];
 	NSDateComponents *dateComponents = [[NSDateComponents alloc] init];
 	dateComponents.year = 2014;
 	dateComponents.month = 6;
 	dateComponents.day = 3;
-    correctReview.date = [calendar dateFromComponents:dateComponents];
+	correctReview.date = [calendar dateFromComponents:dateComponents];
 
 	correctReview.dateUnformatted = @{};
 	correctReview.languageCode = @"de";

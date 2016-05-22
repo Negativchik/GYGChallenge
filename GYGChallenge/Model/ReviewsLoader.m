@@ -99,10 +99,10 @@
 
 	NSURLSession *session = [NSURLSession sessionWithConfiguration:sessionConfig delegate:nil delegateQueue:nil];
 
-    NSString *urlString = [@"https://www.getyourguide.com" stringByAppendingPathComponent:path];
-    urlString = [urlString stringByAppendingPathComponent:@"review"];
+	NSString *urlString = [@"https://www.getyourguide.com" stringByAppendingPathComponent:path];
+	urlString = [urlString stringByAppendingPathComponent:@"review"];
 	NSURL *URL = [NSURL URLWithString:urlString];
-	
+
 	NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:URL];
 	request.HTTPMethod = @"POST";
 
