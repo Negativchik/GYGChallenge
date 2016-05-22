@@ -7,11 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		45A00624356E318D093EEAC0 /* libPods-GYGChallengeTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A594C51304022F014FA88FD /* libPods-GYGChallengeTests.a */; };
 		95454D641CF11A66002C8BFD /* ReviewTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 95454D631CF11A66002C8BFD /* ReviewTests.m */; };
+		957469F41CF1310100B5015C /* ReviewTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 957469F31CF1310100B5015C /* ReviewTableViewCell.m */; };
+		957469F71CF131DD00B5015C /* ReviewTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 957469F61CF131DD00B5015C /* ReviewTableViewController.m */; };
+		957469FE1CF1444300B5015C /* LoadMoreTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 957469FD1CF1444300B5015C /* LoadMoreTableViewCell.m */; };
+		95747A661CF1B3940066F5BE /* WriteReviewTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 95747A651CF1B3940066F5BE /* WriteReviewTableViewController.m */; };
 		95A33E351CF05929007307F5 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 95A33E341CF05929007307F5 /* main.m */; };
 		95A33E381CF05929007307F5 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 95A33E371CF05929007307F5 /* AppDelegate.m */; };
-		95A33E3B1CF05929007307F5 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 95A33E3A1CF05929007307F5 /* ViewController.m */; };
 		95A33E3E1CF05929007307F5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 95A33E3C1CF05929007307F5 /* Main.storyboard */; };
 		95A33E401CF05929007307F5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 95A33E3F1CF05929007307F5 /* Assets.xcassets */; };
 		95A33E431CF05929007307F5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 95A33E411CF05929007307F5 /* LaunchScreen.storyboard */; };
@@ -21,6 +23,8 @@
 		95A33E691CF0638B007307F5 /* Response in Resources */ = {isa = PBXBuildFile; fileRef = 95A33E681CF0638B007307F5 /* Response */; };
 		95A33E6C1CF09F78007307F5 /* ReviewsLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = 95A33E6B1CF09F78007307F5 /* ReviewsLoader.m */; };
 		95A33E6E1CF0A234007307F5 /* ReviewsLoaderTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 95A33E6D1CF0A234007307F5 /* ReviewsLoaderTests.m */; };
+		9F191EFF57650EEAAA2265C1 /* Pods_GYGChallengeTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E6ADFF7E1648A3DC7F1E7B2 /* Pods_GYGChallengeTests.framework */; };
+		DB0D7BF975D215CB29301782 /* Pods_GYGChallenge.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 87AF6F2A2758F946EC6C1B4B /* Pods_GYGChallenge.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,15 +38,23 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		3A594C51304022F014FA88FD /* libPods-GYGChallengeTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-GYGChallengeTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		0E6ADFF7E1648A3DC7F1E7B2 /* Pods_GYGChallengeTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GYGChallengeTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		42D71FDF3DA9967167FC5009 /* Pods-GYGChallengeTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GYGChallengeTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GYGChallengeTests/Pods-GYGChallengeTests.debug.xcconfig"; sourceTree = "<group>"; };
+		7ADA7C4DD592CFB8C16F4651 /* Pods-GYGChallenge.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GYGChallenge.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GYGChallenge/Pods-GYGChallenge.debug.xcconfig"; sourceTree = "<group>"; };
+		87AF6F2A2758F946EC6C1B4B /* Pods_GYGChallenge.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GYGChallenge.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		95454D631CF11A66002C8BFD /* ReviewTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReviewTests.m; sourceTree = "<group>"; };
+		957469F21CF1310100B5015C /* ReviewTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ReviewTableViewCell.h; path = Views/ReviewTableViewCell.h; sourceTree = "<group>"; };
+		957469F31CF1310100B5015C /* ReviewTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ReviewTableViewCell.m; path = Views/ReviewTableViewCell.m; sourceTree = "<group>"; };
+		957469F51CF131DD00B5015C /* ReviewTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ReviewTableViewController.h; path = ViewControllers/ReviewTableViewController.h; sourceTree = "<group>"; };
+		957469F61CF131DD00B5015C /* ReviewTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ReviewTableViewController.m; path = ViewControllers/ReviewTableViewController.m; sourceTree = "<group>"; };
+		957469FC1CF1444300B5015C /* LoadMoreTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LoadMoreTableViewCell.h; path = Views/LoadMoreTableViewCell.h; sourceTree = "<group>"; };
+		957469FD1CF1444300B5015C /* LoadMoreTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LoadMoreTableViewCell.m; path = Views/LoadMoreTableViewCell.m; sourceTree = "<group>"; };
+		95747A641CF1B3940066F5BE /* WriteReviewTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WriteReviewTableViewController.h; path = ViewControllers/WriteReviewTableViewController.h; sourceTree = "<group>"; };
+		95747A651CF1B3940066F5BE /* WriteReviewTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WriteReviewTableViewController.m; path = ViewControllers/WriteReviewTableViewController.m; sourceTree = "<group>"; };
 		95A33E301CF05929007307F5 /* GYGChallenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GYGChallenge.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		95A33E341CF05929007307F5 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		95A33E361CF05929007307F5 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		95A33E371CF05929007307F5 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		95A33E391CF05929007307F5 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		95A33E3A1CF05929007307F5 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		95A33E3D1CF05929007307F5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		95A33E3F1CF05929007307F5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		95A33E421CF05929007307F5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -60,6 +72,7 @@
 		95A33E6B1CF09F78007307F5 /* ReviewsLoader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ReviewsLoader.m; path = Model/ReviewsLoader.m; sourceTree = "<group>"; };
 		95A33E6D1CF0A234007307F5 /* ReviewsLoaderTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReviewsLoaderTests.m; sourceTree = "<group>"; };
 		A4C896C677A4C962209A40C2 /* Pods-GYGChallengeTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GYGChallengeTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-GYGChallengeTests/Pods-GYGChallengeTests.release.xcconfig"; sourceTree = "<group>"; };
+		B35F1BCA1EA3FA32B498F960 /* Pods-GYGChallenge.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GYGChallenge.release.xcconfig"; path = "Pods/Target Support Files/Pods-GYGChallenge/Pods-GYGChallenge.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,6 +80,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DB0D7BF975D215CB29301782 /* Pods_GYGChallenge.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -74,7 +88,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				45A00624356E318D093EEAC0 /* libPods-GYGChallengeTests.a in Frameworks */,
+				9F191EFF57650EEAAA2265C1 /* Pods_GYGChallengeTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -84,7 +98,8 @@
 		27CD50800C5F42C155FE8F8E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				3A594C51304022F014FA88FD /* libPods-GYGChallengeTests.a */,
+				87AF6F2A2758F946EC6C1B4B /* Pods_GYGChallenge.framework */,
+				0E6ADFF7E1648A3DC7F1E7B2 /* Pods_GYGChallengeTests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -94,6 +109,8 @@
 			children = (
 				42D71FDF3DA9967167FC5009 /* Pods-GYGChallengeTests.debug.xcconfig */,
 				A4C896C677A4C962209A40C2 /* Pods-GYGChallengeTests.release.xcconfig */,
+				7ADA7C4DD592CFB8C16F4651 /* Pods-GYGChallenge.debug.xcconfig */,
+				B35F1BCA1EA3FA32B498F960 /* Pods-GYGChallenge.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -101,8 +118,10 @@
 		95454D651CF12286002C8BFD /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				95A33E391CF05929007307F5 /* ViewController.h */,
-				95A33E3A1CF05929007307F5 /* ViewController.m */,
+				957469F51CF131DD00B5015C /* ReviewTableViewController.h */,
+				957469F61CF131DD00B5015C /* ReviewTableViewController.m */,
+				95747A641CF1B3940066F5BE /* WriteReviewTableViewController.h */,
+				95747A651CF1B3940066F5BE /* WriteReviewTableViewController.m */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -114,6 +133,17 @@
 				95A33E411CF05929007307F5 /* LaunchScreen.storyboard */,
 			);
 			name = Interface;
+			sourceTree = "<group>";
+		};
+		957469F11CF130E300B5015C /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				957469FC1CF1444300B5015C /* LoadMoreTableViewCell.h */,
+				957469FD1CF1444300B5015C /* LoadMoreTableViewCell.m */,
+				957469F21CF1310100B5015C /* ReviewTableViewCell.h */,
+				957469F31CF1310100B5015C /* ReviewTableViewCell.m */,
+			);
+			name = Views;
 			sourceTree = "<group>";
 		};
 		95A33E271CF05929007307F5 = {
@@ -146,6 +176,7 @@
 				95A33E581CF05932007307F5 /* Model */,
 				95A33E331CF05929007307F5 /* Supporting Files */,
 				95454D651CF12286002C8BFD /* ViewControllers */,
+				957469F11CF130E300B5015C /* Views */,
 			);
 			path = GYGChallenge;
 			sourceTree = "<group>";
@@ -192,9 +223,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 95A33E521CF05929007307F5 /* Build configuration list for PBXNativeTarget "GYGChallenge" */;
 			buildPhases = (
+				8DB8D406B3C4F46AA37F242B /* 📦 Check Pods Manifest.lock */,
 				95A33E2C1CF05929007307F5 /* Sources */,
 				95A33E2D1CF05929007307F5 /* Frameworks */,
 				95A33E2E1CF05929007307F5 /* Resources */,
+				2446AF057164749413B9ABD1 /* 📦 Embed Pods Frameworks */,
+				5C4FA65DD1A7C3134747C5D3 /* 📦 Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -300,6 +334,21 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-GYGChallengeTests/Pods-GYGChallengeTests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		2446AF057164749413B9ABD1 /* 📦 Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-GYGChallenge/Pods-GYGChallenge-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		5A05D14FEF88E59CB7C4B720 /* 📦 Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -313,6 +362,36 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-GYGChallengeTests/Pods-GYGChallengeTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		5C4FA65DD1A7C3134747C5D3 /* 📦 Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-GYGChallenge/Pods-GYGChallenge-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8DB8D406B3C4F46AA37F242B /* 📦 Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		BBF829671EDB587D436A2245 /* 📦 Check Pods Manifest.lock */ = {
@@ -337,12 +416,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				95A33E3B1CF05929007307F5 /* ViewController.m in Sources */,
+				957469FE1CF1444300B5015C /* LoadMoreTableViewCell.m in Sources */,
+				95747A661CF1B3940066F5BE /* WriteReviewTableViewController.m in Sources */,
 				95A33E5B1CF0594F007307F5 /* Review.m in Sources */,
 				95A33E6C1CF09F78007307F5 /* ReviewsLoader.m in Sources */,
+				957469F71CF131DD00B5015C /* ReviewTableViewController.m in Sources */,
 				95A33E661CF06244007307F5 /* ReviewParser.m in Sources */,
 				95A33E381CF05929007307F5 /* AppDelegate.m in Sources */,
 				95A33E351CF05929007307F5 /* main.m in Sources */,
+				957469F41CF1310100B5015C /* ReviewTableViewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -470,6 +552,7 @@
 		};
 		95A33E531CF05929007307F5 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7ADA7C4DD592CFB8C16F4651 /* Pods-GYGChallenge.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = GYGChallenge/Info.plist;
@@ -481,6 +564,7 @@
 		};
 		95A33E541CF05929007307F5 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B35F1BCA1EA3FA32B498F960 /* Pods-GYGChallenge.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = GYGChallenge/Info.plist;

@@ -21,6 +21,8 @@ typedef enum : NSUInteger {
 
 @interface ReviewsLoader : NSObject
 
+@property (nonatomic, readonly) BOOL isBusy;
+
 - (void)load:(NSUInteger)count
 	     skip:(NSUInteger)skip
 	   rating:(float)rating

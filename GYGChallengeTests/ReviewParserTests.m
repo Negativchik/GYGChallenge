@@ -107,11 +107,12 @@
 	correctReview.author = @"Bernhard \u2013 Lilienthal, Germany";
 	correctReview.foregroundLanguage = YES;
 
+    NSCalendar *calendar = [NSCalendar currentCalendar];
 	NSDateComponents *dateComponents = [[NSDateComponents alloc] init];
 	dateComponents.year = 2014;
 	dateComponents.month = 6;
 	dateComponents.day = 3;
-	correctReview.date = [dateComponents date];
+    correctReview.date = [calendar dateFromComponents:dateComponents];
 
 	correctReview.dateUnformatted = @{};
 	correctReview.languageCode = @"de";
@@ -128,7 +129,7 @@
 	XCTAssertEqual(correctReview.message, review.message);
 	XCTAssertEqual(correctReview.author, review.author);
 	XCTAssertEqual(correctReview.foregroundLanguage, review.foregroundLanguage);
-	XCTAssertEqual(correctReview.date, review.date);
+	XCTAssertTrue([correctReview.date isEqual:review.date]);
 	XCTAssertEqual(correctReview.dateUnformatted, review.dateUnformatted);
 	XCTAssertEqual(correctReview.languageCode, review.languageCode);
 	XCTAssertEqual(correctReview.travelerType, review.travelerType);

@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  ReviewTableViewController.h
 //  GYGChallenge
 //
 //  Created by Michael Smirnov on 21.05.16.
@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
+@interface ReviewTableViewController : UITableViewController
 
 @end
