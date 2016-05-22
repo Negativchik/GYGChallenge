@@ -11,13 +11,13 @@
 
 @implementation ReviewsLoader
 
-- (void)load:(NSUInteger)count
-	     skip:(NSUInteger)skip
-	   rating:(float)rating
-    sortDirection:(SortDirection)sortDirection
-	sortField:(SortField)sortField
-       completion:(void (^)(NSArray<Review *> *, NSUInteger))completion
-	  failure:(void (^)(NSError *))failure {
+- (NSURLSessionDataTask *)load:(NSUInteger)count
+			  skip:(NSUInteger)skip
+			rating:(float)rating
+		 sortDirection:(SortDirection)sortDirection
+		     sortField:(SortField)sortField
+		    completion:(void (^)(NSArray<Review *> *, NSUInteger))completion
+		       failure:(void (^)(NSError *))failure {
 	NSUInteger page = skip / count;
 
 	NSURLSessionConfiguration *sessionConfig = [NSURLSessionConfiguration ephemeralSessionConfiguration];
@@ -38,20 +38,41 @@
 	NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:URL];
 	request.HTTPMethod = @"GET";
 
+	/* Start a new Task */
 	NSURLSessionDataTask *task =
 	    [session dataTaskWithRequest:request
 		       completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
 			       if (error == nil) {
+				       // Success
 				       ReviewParser *parser = [[ReviewParser alloc] initWithData:data];
 				       [parser parseWithCompletion:completion failure:failure];
 			       } else {
+				       // Failure
 				       failure(error);
 			       }
 		       }];
 	[task resume];
+	return task;
 }
 
-- (void)loadCurrentUserReviewWithCompletion:(void (^)(Review *))completion failure:(void (^)(NSError *))failure {
+- (NSURLSessionDataTask *)loadCurrentUserReviewWithCompletion:(void (^)(Review *))completion
+						      failure:(void (^)(NSError *))failure {
+	// Mock response
+	NSDictionary *reviewDictionary = [[NSUserDefaults standardUserDefaults] valueForKey:@"UserReview"];
+	if (reviewDictionary == nil) {
+		dispatch_after(dispatch_time(DISPATCH_TIME_NOW, 2 * NSEC_PER_SEC), dispatch_get_main_queue(), ^{
+			completion(nil);
+		});
+	}
+
+	ReviewParser *parser = [[ReviewParser alloc] initWithData:nil];
+	Review *review = [parser reviewFromDictionary:reviewDictionary];
+	dispatch_after(dispatch_time(DISPATCH_TIME_NOW, 1 * NSEC_PER_SEC), dispatch_get_main_queue(), ^{
+		completion(review);
+	});
+	return nil;
+
+	// Real response
 	NSURLSessionConfiguration *sessionConfig = [NSURLSessionConfiguration ephemeralSessionConfiguration];
 
 	NSURLSession *session = [NSURLSession sessionWithConfiguration:sessionConfig delegate:nil delegateQueue:nil];
@@ -66,15 +87,17 @@
 	NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:URL];
 	request.HTTPMethod = @"GET";
 
+	/* Start a new Task */
 	NSURLSessionDataTask *task = [session
 	    dataTaskWithRequest:request
 	      completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
 		      if (error == nil) {
+			      // Success
 			      NSUInteger statusCode = [(NSHTTPURLResponse *)response statusCode];
 			      if (statusCode == 200) {
 				      NSDictionary *dataDictionary =
 					  [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
-				      ReviewParser *parser = [[ReviewParser alloc] initWithData:data];
+				      ReviewParser *parser = [[ReviewParser alloc] initWithData:nil];
 				      Review *review = [parser reviewFromDictionary:dataDictionary];
 				      completion(review);
 			      } else if (statusCode == 204) {// There is no Review yet
@@ -83,18 +106,31 @@
 				      failure([NSError errorWithDomain:@"com.GYG.challenge" code:11 userInfo:nil]);
 			      }
 		      } else {
+			      // Failure
 			      failure(error);
 		      }
 	      }];
 	[task resume];
+	return task;
 }
 
-- (void)createReview:(NSString *)path
-	      rating:(float)rating
-	       title:(NSString *)title
-	     message:(NSString *)message
-	  completion:(void (^)(NSArray<Review *> *, NSUInteger))completion
-	     failure:(void (^)(NSError *))failure {
+- (NSURLSessionDataTask *)createReview:(NSString *)path
+				rating:(float)rating
+				 title:(NSString *)title
+			       message:(NSString *)message
+			    completion:(void (^)(void))completion
+			       failure:(void (^)(NSError *))failure {
+	// Mock
+	NSDictionary *serializedReview =
+	    @{ @"rating" : [NSString stringWithFormat:@"%0.1f", rating],
+	       @"title" : title,
+	       @"message" : message };
+	[[NSUserDefaults standardUserDefaults] setObject:serializedReview forKey:@"UserReview"];
+    [[NSUserDefaults standardUserDefaults] synchronize];
+	completion();
+	return nil;
+
+	// Real code
 	NSURLSessionConfiguration *sessionConfig = [NSURLSessionConfiguration ephemeralSessionConfiguration];
 
 	NSURLSession *session = [NSURLSession sessionWithConfiguration:sessionConfig delegate:nil delegateQueue:nil];
@@ -128,6 +164,7 @@
 			       }
 		       }];
 	[task resume];
+	return task;
 }
 
 #pragma mark Helpers

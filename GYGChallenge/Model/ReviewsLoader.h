@@ -23,20 +23,20 @@ typedef enum : NSUInteger {
 
 @property (nonatomic, readonly) BOOL isBusy;
 
-- (void)load:(NSUInteger)count
-	     skip:(NSUInteger)skip
-	   rating:(float)rating
-    sortDirection:(SortDirection)sortDirection
-	sortField:(SortField)sortField
-       completion:(void (^)(NSArray<Review *> *reviews, NSUInteger totalReviews))completion
-	  failure:(void (^)(NSError *error))failure;
-- (void)loadCurrentUserReviewWithCompletion:(void (^)(Review *review))completion
-				    failure:(void (^)(NSError *error))failure;
-- (void)createReview:(NSString *)path
-	      rating:(float)rating
-	       title:(NSString *)title
-	     message:(NSString *)message
-	  completion:(void (^)(NSArray<Review *> *reviews, NSUInteger totalReviews))completion
-	     failure:(void (^)(NSError *error))failure;
+- (NSURLSessionDataTask *)load:(NSUInteger)count
+			  skip:(NSUInteger)skip
+			rating:(float)rating
+		 sortDirection:(SortDirection)sortDirection
+		     sortField:(SortField)sortField
+		    completion:(void (^)(NSArray<Review *> *reviews, NSUInteger totalReviews))completion
+		       failure:(void (^)(NSError *error))failure;
+- (NSURLSessionDataTask *)loadCurrentUserReviewWithCompletion:(void (^)(Review *review))completion
+						      failure:(void (^)(NSError *error))failure;
+- (NSURLSessionDataTask *)createReview:(NSString *)path
+				rating:(float)rating
+				 title:(NSString *)title
+			       message:(NSString *)message
+			    completion:(void (^)(void))completion
+			       failure:(void (^)(NSError *error))failure;
 
 @end
